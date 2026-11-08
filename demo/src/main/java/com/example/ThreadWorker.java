@@ -8,6 +8,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 
 public class ThreadWorker extends Thread{
+    private static ArrayList<String> lista_urs = new ArrayList();
 
     private Socket s; 
     private Biglietti bi;
@@ -20,8 +21,6 @@ public class ThreadWorker extends Thread{
         bi = b;
         this.logged = false;
     }
-
-    ArrayList<String> lista_urs = new ArrayList();
 
     String operazione;
     String[] stringaUnitaInput;
@@ -109,7 +108,7 @@ public class ThreadWorker extends Thread{
     }
 
 
-    public boolean login(String username){
+    public synchronized boolean login(String username){
 
         if(this.logged){
             out.println("Sei già loggato!");

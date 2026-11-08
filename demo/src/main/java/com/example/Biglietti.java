@@ -15,7 +15,7 @@ public class Biglietti {
     }
     
     public String tornaBigliettiRimasti(){
-        return "AVAL TICKETS: " + " Gold: " + this.gold + " Pit: " + this.pit + " Parterre: " + this.parterre;
+        return "AVAILABLE TICKETS: " + " Gold: " + this.gold + " Pit: " + this.pit + " Parterre: " + this.parterre;
     }
 
     public synchronized boolean acquisto(String tipo_biglietto, int num_tickets) throws Exception{
